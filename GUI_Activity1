@@ -83,7 +83,6 @@ public class RegistrationForm {
         frame.add(clearButton);
         frame.add(closeButton);
 
-        // Display the frame
         frame.setVisible(true);
     }
 }
