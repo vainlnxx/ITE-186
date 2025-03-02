@@ -1,0 +1,89 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class RegistrationForm {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Southwestern University Registration Form");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        
+        JLabel titleLabel = new JLabel("Southwestern University");
+        JLabel subtitleLabel = new JLabel("College of Information Technology");
+        JLabel formLabel = new JLabel("Registration Form");
+
+       
+        JLabel idLabel = new JLabel("ID Number:");
+        JTextField idField = new JTextField(15);
+
+       
+        JLabel nameLabel = new JLabel("Name (LastName, FirstName, MI):");
+        JTextField nameField = new JTextField(20);
+
+       
+        JLabel statusLabel = new JLabel("Status:");
+        String[] statusOptions = {"Single", "Married"};
+        JComboBox<String> statusComboBox = new JComboBox<>(statusOptions);
+
+       
+        JLabel genderLabel = new JLabel("Gender:");
+        JRadioButton maleRadioButton = new JRadioButton("Male");
+        JRadioButton femaleRadioButton = new JRadioButton("Female");
+
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(maleRadioButton);
+        genderGroup.add(femaleRadioButton);
+
+       
+        JButton saveButton = new JButton("Save");
+        JButton clearButton = new JButton("Clear");
+        JButton closeButton = new JButton("Close");
+
+       
+        saveButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               
+                JOptionPane.showMessageDialog(frame, "Data Saved!");
+            }
+        });
+
+        clearButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               
+                idField.setText("");
+                nameField.setText("");
+                statusComboBox.setSelectedIndex(0);
+                genderGroup.clearSelection();
+            }
+        });
+
+        closeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               
+                frame.dispose();
+            }
+        });
+
+       
+        frame.add(titleLabel);
+        frame.add(subtitleLabel);
+        frame.add(formLabel);
+        frame.add(idLabel);
+        frame.add(idField);
+        frame.add(nameLabel);
+        frame.add(nameField);
+        frame.add(statusLabel);
+        frame.add(statusComboBox);
+        frame.add(genderLabel);
+        frame.add(maleRadioButton);
+        frame.add(femaleRadioButton);
+        frame.add(saveButton);
+        frame.add(clearButton);
+        frame.add(closeButton);
+
+        // Display the frame
+        frame.setVisible(true);
+    }
+}
