@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-public class TestingClass {
+public class BillingSystem {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Billing System");
         frame.setSize(250, 230);
