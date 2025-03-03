@@ -1,10 +1,9 @@
 package main;
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 
 public class BillingSystem {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         JFrame frame = new JFrame("Billing System");
         frame.setSize(250, 230);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,7 +32,7 @@ public class BillingSystem {
         JTextField finalField = new JTextField(15);
         finalField.setEnabled(false);
 
-        JButton completeButton = new JButton("Complete");
+        JButton computeButton = new JButton("Compute");
         JButton clearButton = new JButton("Clear");
         JButton exitButton = new JButton("Exit");
 
@@ -49,18 +48,18 @@ public class BillingSystem {
         frame.add(amountField);
         frame.add(finalLabel);
         frame.add(finalField);
-        frame.add(completeButton);
+        frame.add(computeButton);
         frame.add(clearButton);
         frame.add(exitButton);
 
-        completeButton.addActionListener(e -> {
+        computeButton.addActionListener(e -> {
             try {
-                int shirts = Integer.parseInt(shirtField.getText());
+                int shirts = Integer.valueOf(shirtField.getText());
                 int pricePerShirt = (shirts >= 50) ? 200 : 250;
                 int totalBill = shirts * pricePerShirt;
                 
-                Random random = new Random();
-                int discountRate = random.nextInt(21); 
+                
+                int discountRate = Integer.valueOf(discountField.getText()); 
                 double discountAmount =  totalBill * (discountRate / 100.0);
                 double finalBill = totalBill - discountAmount;
                 
