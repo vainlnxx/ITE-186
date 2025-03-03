@@ -1,0 +1,64 @@
+package activity;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class Buttons {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Buttons");
+		frame.setSize(400, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(new FlowLayout());
+		
+		frame.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+		
+		JButton redButton = new JButton("RED");
+		JButton yellowButton = new JButton("YELLOW");
+		JButton greenButton = new JButton("GREEN");
+		
+		redButton.setBackground(Color.RED);
+		yellowButton.setBackground(Color.YELLOW);
+		greenButton.setBackground(Color.GREEN);
+
+		
+		//redButton.addActionListener((ActionListener) frame);
+		//yellowButton.addActionListener((ActionListener) frame);
+		//greenButton.addActionListener((ActionListener) frame);
+		if (frame.equals(redButton)) {
+			frame.getContentPane().getBackground(Color.RED);	
+		}
+		
+		
+		frame.add(redButton);
+		frame.add(yellowButton);
+		frame.add(greenButton);
+		
+		frame.setVisible(true);
+		
+	}
+	//public void actionPerformed(ActionEvent e) {
+		
+		//ae = null;
+		//String label=ae.getActionCommand();
+		//frame = null;
+		//if (label.equals("RED"))
+		//{
+		//	frame.setBackground(Color.RED);
+		//}
+		//if (label.equals("YELLOW"))
+		//{
+		//	frame.setBackground(Color.YELLOW);
+		//}
+		//if (label.equals("GREEN"))
+		//{
+		//	frame.setBackground(Color.GREEN);
+		//}
+	//}
+	
+}
