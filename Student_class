@@ -1,0 +1,41 @@
+package sa;
+
+public class Student extends PersonTest {
+	public String id;
+	public String course;
+	public int yr;
+	
+	public Student() {
+		super();
+		this.id="232414578";
+		this.course="BSIT";
+		this.yr=1;
+		
+		
+	}
+	
+	public Student(String n, int age,String add, String id, String course, int year) {
+		super(n,age,add);
+		this.id=id;
+		this.course=course;
+		this.yr=year;
+		
+	}
+	
+	public void display() {
+		super.display();
+		System.out.println("ID: " + this.id);
+		System.out.println("COURSE: " + this.course);
+		System.out.println("YEAR: " + this.yr);
+	}
+	
+	public static void main(String[] args) {
+		Student s1=new Student();
+		Student s2=new Student("James",25,"Lapu-lapu","1234456","BSA",4);
+		s1.display();
+		s2.display();
+
+
+	}
+
+}
