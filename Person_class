@@ -1,0 +1,78 @@
+import java.util.*;
+
+public class Person {
+	public String name;
+	public int age;
+	public String address;
+	
+	public Person() {
+		this.name="Ken";
+		this.age=22;
+		this.address="Kinto Limbo";
+	}
+	
+	public Person(String n, int age, String add) {
+		this.name=n;
+		this.age=age;
+		this.address=add;
+	}
+	
+	public void display() {
+		System.out.println("Name: "+ getName());
+		System.out.println("Age: "+ getAge());
+		System.out.println("Address: "+ getAddress());
+	}
+	
+	public void eat() {
+		System.out.println("The person is eating banana!");
+	}
+	
+	public void setName(String name) {
+		this.name=name;
+	}
+	
+	public void setAge(int age) {
+		this.age=age;
+	}
+	
+	public void setAddress(String address) {
+		this.address=address;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getAge() {
+		return this.age;
+	}
+	
+	public String getAddress() {
+		return this.address;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		/*Person p1 = new Person();
+		p1.display();
+		p1.eat();*/
+		Person p2 = new Person("JP",18,"Cebu City");
+		p2.display(); 
+		
+		p2.setAddress("Mandaue City");p2.display();
+	
+		/*Scanner s= new Scanner(System.in);
+		System.out.print("Enter name: ");
+		String nm=s.nextLine();
+		System.out.print("Enter address: ");
+		String add=s.nextLine();
+		System.out.print("Enter age: ");
+		int a=s.nextInt();
+		Person p3=new Person(nm,a,add);*/
+			
+
+		
+	}
+
+}
