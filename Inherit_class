@@ -1,0 +1,100 @@
+package fd;
+
+import java.util.*;
+
+class PersonTest {
+	public String name;
+	public int age;
+	public String address;
+	
+	public PersonTest() {
+		this.name="Ken";
+		this.age=22;
+		this.address="Kinto Limbo";
+	}
+	
+	public PersonTest(String n, int age, String add) {
+		this.name=n;
+		this.age=age;
+		this.address=add;
+	}
+	
+	public void display() {
+		System.out.println("Name: "+ getName());
+		System.out.println("Age: "+ getAge());
+		System.out.println("Address: "+ getAddress());
+	}
+	
+	public void eat() {
+		System.out.println("The person is eating banana!");
+	}
+	
+	public void setName(String name) {
+		this.name=name;
+	}
+	
+	public void setAge(int age) {
+		this.age=age;
+	}
+	
+	public void setAddress(String address) {
+		this.address=address;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getAge() {
+		return this.age;
+	}
+	
+	public String getAddress() {
+		return this.address;
+	}
+	
+	
+}
+
+public class Inherit extends PersonTest{
+	
+		public String id;
+		public String course;
+		public int yr;
+		
+		public Inherit() {
+			super();
+			this.id="232414578";
+			this.course="BSIT";
+			this.yr=1;
+			
+			
+		}
+		
+		public Inherit(String n, int age,String add, String id, String course, int year) {
+			super(n,age,add);
+			this.id=id;
+			this.course=course;
+			this.yr=year;
+			
+		}
+		
+		public void display() {
+			super.display();
+			System.out.println("ID: " + this.id);
+			System.out.println("COURSE: " + this.course);
+			System.out.println("YEAR: " + this.yr);
+		}
+		
+		public static void main(String[] args) {
+			Inherit s1=new Inherit();
+			Inherit s2=new Inherit("James",25,"Lapu-lapu","1234456","BSA",4);
+			s1.display();
+			s2.display();
+
+
+		}
+
+	}
+
+	
